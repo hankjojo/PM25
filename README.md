@@ -14,7 +14,7 @@
 
 ![img](https://github.com/hankjojo/PM25/blob/master/Sources/PM25_4.gif)
 <br/>
-用Alamofire接政府的溫度api，用SWXMLHash解析XML
+用Alamofire接政府資料開放平臺的溫度api，用SWXMLHash解析XML
 
 <h3>PM2.5資訊</h3>
 
