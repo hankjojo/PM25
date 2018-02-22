@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xSB-fh-mRZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PM2.5-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController restorationIdentifier="ViewController" storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="TestAlamofire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mdz-6e-ppg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3l7-5P-cow"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLd-Ig-SAb" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Gb3-OR-FSE"/>
+                                    <constraint firstAttribute="height" constant="200" id="gtQ-yN-zg2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballScaleRippleMultiple"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="1" green="0.59223859180000005" blue="0.1180555556" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Coq-kJ-Clk">
+                                <rect key="frame" x="10" y="630.5" width="365" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Coq-kJ-Clk" secondAttribute="height" multiplier="952:69" id="oAY-4D-5Vj"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="dust2_5_nasa_bar_new"/>
+                                <connections>
+                                    <segue destination="F4u-mo-IxJ" kind="presentation" id="KJf-MO-hgJ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVp-Zy-g2H">
+                                <rect key="frame" x="182.5" y="620" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="oMc-HK-Ji6"/>
+                                    <constraint firstAttribute="height" constant="10" id="wQc-AZ-9db"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="info"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Coq-kJ-Clk" secondAttribute="bottom" constant="10" id="237-Xk-nXg"/>
+                            <constraint firstItem="Coq-kJ-Clk" firstAttribute="top" secondItem="pVp-Zy-g2H" secondAttribute="bottom" id="2ah-nn-BTZ"/>
+                            <constraint firstItem="mdz-6e-ppg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-64" id="BM7-yR-zEd"/>
+                            <constraint firstItem="Coq-kJ-Clk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="Mf0-v2-oUA"/>
+                            <constraint firstAttribute="trailing" secondItem="Coq-kJ-Clk" secondAttribute="trailing" id="QUo-db-FAH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mdz-6e-ppg" secondAttribute="bottom" id="SMP-VC-UXZ"/>
+                            <constraint firstItem="cLd-Ig-SAb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WCn-Bo-PAQ"/>
+                            <constraint firstItem="cLd-Ig-SAb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZOH-hi-Aoi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mdz-6e-ppg" secondAttribute="trailing" id="kOS-II-sSg"/>
+                            <constraint firstItem="mdz-6e-ppg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kbX-ya-kIb"/>
+                            <constraint firstItem="pVp-Zy-g2H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uxf-Kq-a02"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="PM2.5" id="u7m-1p-VIf">
+                        <barButtonItem key="leftBarButtonItem" title="模式" style="plain" id="s1T-LA-CNZ">
+                            <connections>
+                                <action selector="showView:" destination="BYZ-38-t0r" id="oUN-s5-sPI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="pbm-pJ-1u8">
+                            <connections>
+                                <action selector="refreshAction:" destination="BYZ-38-t0r" id="jni-4u-72T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="map" destination="mdz-6e-ppg" id="rrj-E4-keT"/>
+                        <outlet property="menuView" destination="S6i-0M-6IJ" id="SxY-cZ-zcX"/>
+                        <outlet property="nvItem" destination="u7m-1p-VIf" id="g6W-W4-dcz"/>
+                        <outlet property="nvView" destination="cLd-Ig-SAb" id="Vor-Cp-9rn"/>
+                        <outlet property="pm25standard" destination="Coq-kJ-Clk" id="S8D-qe-9cq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="S6i-0M-6IJ">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="400"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="PM25" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUH-mv-za6">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                            <color key="backgroundColor" red="0.4438488391" green="0.62264358939999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="9yB-Of-ftF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
+                            <state key="normal" title="PM2.5">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="40"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="changeMod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L7Q-Si-WyV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="weather" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejd-xb-hfu">
+                            <rect key="frame" x="0.0" y="100" width="100" height="80"/>
+                            <color key="backgroundColor" red="1" green="0.59223859180000005" blue="0.1180555556" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
+                            <state key="normal" title="溫度">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="40"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="changeMod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="abD-82-Vug"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ejd-xb-hfu" firstAttribute="leading" secondItem="1tw-tz-dPA" secondAttribute="leading" id="AID-Ww-vi3"/>
+                        <constraint firstItem="CUH-mv-za6" firstAttribute="leading" secondItem="1tw-tz-dPA" secondAttribute="leading" id="GL7-HO-1hD"/>
+                        <constraint firstItem="1tw-tz-dPA" firstAttribute="trailing" secondItem="CUH-mv-za6" secondAttribute="trailing" id="JaT-TR-YW5"/>
+                        <constraint firstItem="ejd-xb-hfu" firstAttribute="trailing" secondItem="1tw-tz-dPA" secondAttribute="trailing" id="Ni1-cB-p3g"/>
+                        <constraint firstItem="ejd-xb-hfu" firstAttribute="top" secondItem="CUH-mv-za6" secondAttribute="bottom" constant="20" id="Urx-lR-W3t"/>
+                        <constraint firstItem="ejd-xb-hfu" firstAttribute="height" secondItem="CUH-mv-za6" secondAttribute="height" id="YOC-ar-3sq"/>
+                        <constraint firstItem="CUH-mv-za6" firstAttribute="top" secondItem="1tw-tz-dPA" secondAttribute="top" id="rtK-rW-Veb"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="1tw-tz-dPA"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="388" y="107"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QZt-BR-cqg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xSB-fh-mRZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Iq-hC-Qrg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="atu-c3-jX8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ont-i1-dcm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-378" y="107"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="N2D-6a-fMb">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="F4u-mo-IxJ" customClass="MenuViewController" customModule="TestAlamofire" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="ZzZ-0I-hgj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MSp-AG-sMN">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rON-If-qPk">
+                                    <rect key="frame" x="0.0" y="50" width="375" height="133.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcU-SP-at8">
+                                            <rect key="frame" x="20" y="18.5" width="96" height="96"/>
+                                            <color key="backgroundColor" red="0.33728283643722534" green="0.73742324113845825" blue="0.54231029748916626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="96" id="UJC-12-aFk"/>
+                                                <constraint firstAttribute="width" secondItem="FcU-SP-at8" secondAttribute="height" id="bWu-QP-yQj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                            <state key="normal" title="0-35">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(info)"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="48"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="指標等級 1～3 正常戶外活動。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7No-bW-mpu">
+                                            <rect key="frame" x="126" y="10" width="239" height="113.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(info)"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FcU-SP-at8" firstAttribute="leading" secondItem="rON-If-qPk" secondAttribute="leading" constant="20" id="4IM-Lm-ozy"/>
+                                        <constraint firstItem="7No-bW-mpu" firstAttribute="leading" secondItem="FcU-SP-at8" secondAttribute="trailing" constant="10" id="4Sn-WS-ase"/>
+                                        <constraint firstItem="FcU-SP-at8" firstAttribute="centerY" secondItem="rON-If-qPk" secondAttribute="centerY" id="NgN-xR-NQR"/>
+                                        <constraint firstAttribute="trailing" secondItem="7No-bW-mpu" secondAttribute="trailing" constant="10" id="Txe-ul-3IT"/>
+                                        <constraint firstAttribute="bottom" secondItem="7No-bW-mpu" secondAttribute="bottom" constant="10" id="vAJ-Tj-gD3"/>
+                                        <constraint firstItem="7No-bW-mpu" firstAttribute="top" secondItem="rON-If-qPk" secondAttribute="top" constant="10" id="zTo-tg-oPR"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIk-Wk-Dgp">
+                                    <rect key="frame" x="0.0" y="333" width="375" height="133"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssw-TI-rH3">
+                                            <rect key="frame" x="20" y="18.5" width="96" height="96"/>
+                                            <color key="backgroundColor" red="1" green="0.2071007403" blue="0.33705116670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                            <state key="normal" title="54-70">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(info)"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="48"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="指標等級 7～9 1、減少戶外活動。 2、老年人應減少體力消耗 3、具有氣喘的人可能需增加使用吸入劑的頻率" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PJ2-Zb-5fJ">
+                                            <rect key="frame" x="126" y="10" width="239" height="113.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(info)"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ssw-TI-rH3" firstAttribute="leading" secondItem="DIk-Wk-Dgp" secondAttribute="leading" constant="20" id="GI5-4I-a0t"/>
+                                        <constraint firstAttribute="bottom" secondItem="PJ2-Zb-5fJ" secondAttribute="bottom" constant="10" id="P4I-aN-t4H"/>
+                                        <constraint firstItem="PJ2-Zb-5fJ" firstAttribute="top" secondItem="DIk-Wk-Dgp" secondAttribute="top" constant="10" id="W0a-X3-TQz"/>
+                                        <constraint firstItem="PJ2-Zb-5fJ" firstAttribute="leading" secondItem="Ssw-TI-rH3" secondAttribute="trailing" constant="10" id="fHE-us-XnB"/>
+                                        <constraint firstAttribute="trailing" secondItem="PJ2-Zb-5fJ" secondAttribute="trailing" constant="10" id="jCr-jb-qhV"/>
+                                        <constraint firstItem="Ssw-TI-rH3" firstAttribute="centerY" secondItem="DIk-Wk-Dgp" secondAttribute="centerY" id="rKM-BP-mRU"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiA-9z-TBh">
+                                    <rect key="frame" x="0.0" y="474" width="375" height="133.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EI1-SG-kmG">
+                                            <rect key="frame" x="20" y="19" width="96" height="96"/>
+                                            <color key="backgroundColor" red="0.62533557419999997" green="0.49669304489999999" blue="0.74123811719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                            <state key="normal" title="&gt;70">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(info)"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="48"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="指標等級 10 1、避免戶外活動及體力消耗 2、具有氣喘的人可能需增加使用吸入劑的頻率" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PQY-mS-JF4">
+                                            <rect key="frame" x="126" y="10" width="239" height="113.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(info)"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="PQY-mS-JF4" secondAttribute="bottom" constant="10" id="Bbe-9b-bqJ"/>
+                                        <constraint firstItem="EI1-SG-kmG" firstAttribute="centerY" secondItem="fiA-9z-TBh" secondAttribute="centerY" id="LvY-ZH-Dzo"/>
+                                        <constraint firstItem="PQY-mS-JF4" firstAttribute="top" secondItem="fiA-9z-TBh" secondAttribute="top" constant="10" id="RdM-E9-Ifj"/>
+                                        <constraint firstItem="PQY-mS-JF4" firstAttribute="leading" secondItem="EI1-SG-kmG" secondAttribute="trailing" constant="10" id="ZfA-gE-QJP"/>
+                                        <constraint firstItem="EI1-SG-kmG" firstAttribute="leading" secondItem="fiA-9z-TBh" secondAttribute="leading" constant="20" id="ece-pQ-4ga"/>
+                                        <constraint firstAttribute="trailing" secondItem="PQY-mS-JF4" secondAttribute="trailing" constant="10" id="g16-I2-Pqg"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Me9-W0-e2G">
+                                    <rect key="frame" x="0.0" y="191.5" width="375" height="133.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKC-Dv-TTo">
+                                            <rect key="frame" x="20" y="18.5" width="96" height="96"/>
+                                            <color key="backgroundColor" red="1" green="0.59223859177777782" blue="0.11805555555555555" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                            <state key="normal" title="36-53">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(info)"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="48"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="指標等級 4～6 有心臟病、呼吸道及心血管疾病的人成與孩童感受到癥狀時，應考慮減少體力消耗，特別是減少戶外活動。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uru-0d-D7g">
+                                            <rect key="frame" x="126" y="10" width="239" height="113.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(info)"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Uru-0d-D7g" firstAttribute="top" secondItem="Me9-W0-e2G" secondAttribute="top" constant="10" id="CMG-a6-Qvh"/>
+                                        <constraint firstItem="YKC-Dv-TTo" firstAttribute="leading" secondItem="Me9-W0-e2G" secondAttribute="leading" constant="20" id="KiP-Bc-0FF"/>
+                                        <constraint firstItem="YKC-Dv-TTo" firstAttribute="centerY" secondItem="Me9-W0-e2G" secondAttribute="centerY" id="c4x-pM-ssg"/>
+                                        <constraint firstAttribute="trailing" secondItem="Uru-0d-D7g" secondAttribute="trailing" constant="10" id="kxy-oL-3Sc"/>
+                                        <constraint firstItem="Uru-0d-D7g" firstAttribute="leading" secondItem="YKC-Dv-TTo" secondAttribute="trailing" constant="10" id="lM7-gO-MFt"/>
+                                        <constraint firstAttribute="bottom" secondItem="Uru-0d-D7g" secondAttribute="bottom" constant="10" id="qQT-oR-9y9"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="rON-If-qPk" firstAttribute="height" secondItem="MSp-AG-sMN" secondAttribute="height" multiplier="1:5" id="1NU-WC-sJs"/>
+                                <constraint firstItem="fiA-9z-TBh" firstAttribute="leading" secondItem="MSp-AG-sMN" secondAttribute="leading" id="1Qp-Ou-l8G"/>
+                                <constraint firstItem="fiA-9z-TBh" firstAttribute="height" secondItem="DIk-Wk-Dgp" secondAttribute="height" id="5cF-SN-DY9"/>
+                                <constraint firstItem="EI1-SG-kmG" firstAttribute="width" secondItem="Ssw-TI-rH3" secondAttribute="width" id="5ie-rf-VLX"/>
+                                <constraint firstAttribute="trailing" secondItem="Me9-W0-e2G" secondAttribute="trailing" id="74Q-iQ-xQs"/>
+                                <constraint firstItem="DIk-Wk-Dgp" firstAttribute="leading" secondItem="MSp-AG-sMN" secondAttribute="leading" id="CNl-Jx-Nv6"/>
+                                <constraint firstAttribute="trailing" secondItem="fiA-9z-TBh" secondAttribute="trailing" id="FtO-Bk-ET4"/>
+                                <constraint firstItem="DIk-Wk-Dgp" firstAttribute="height" secondItem="Me9-W0-e2G" secondAttribute="height" id="FxR-uF-HC0"/>
+                                <constraint firstItem="rON-If-qPk" firstAttribute="leading" secondItem="MSp-AG-sMN" secondAttribute="leading" id="GPE-VU-wLj"/>
+                                <constraint firstItem="DIk-Wk-Dgp" firstAttribute="firstBaseline" secondItem="Me9-W0-e2G" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="HP5-Id-y4I"/>
+                                <constraint firstItem="fiA-9z-TBh" firstAttribute="firstBaseline" secondItem="DIk-Wk-Dgp" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="JOL-Q5-1Hg"/>
+                                <constraint firstItem="Ssw-TI-rH3" firstAttribute="height" secondItem="FcU-SP-at8" secondAttribute="height" id="JWe-Dc-Jcx"/>
+                                <constraint firstItem="Ssw-TI-rH3" firstAttribute="width" secondItem="FcU-SP-at8" secondAttribute="width" id="Jwo-wB-Rwm"/>
+                                <constraint firstAttribute="trailing" secondItem="DIk-Wk-Dgp" secondAttribute="trailing" id="SDn-bg-FsA"/>
+                                <constraint firstItem="Me9-W0-e2G" firstAttribute="height" secondItem="rON-If-qPk" secondAttribute="height" id="c1k-rf-cZW"/>
+                                <constraint firstItem="YKC-Dv-TTo" firstAttribute="height" secondItem="FcU-SP-at8" secondAttribute="height" id="dCo-56-5cq"/>
+                                <constraint firstAttribute="trailing" secondItem="rON-If-qPk" secondAttribute="trailing" id="drB-su-Duo"/>
+                                <constraint firstItem="EI1-SG-kmG" firstAttribute="height" secondItem="Ssw-TI-rH3" secondAttribute="height" id="g9W-Dl-F1C"/>
+                                <constraint firstItem="Me9-W0-e2G" firstAttribute="firstBaseline" secondItem="rON-If-qPk" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="rKs-Qm-ris"/>
+                                <constraint firstItem="Me9-W0-e2G" firstAttribute="leading" secondItem="MSp-AG-sMN" secondAttribute="leading" id="uAL-Jp-2Qh"/>
+                                <constraint firstItem="rON-If-qPk" firstAttribute="top" secondItem="MSp-AG-sMN" secondAttribute="top" constant="50" id="vPZ-8I-l2v"/>
+                                <constraint firstItem="YKC-Dv-TTo" firstAttribute="width" secondItem="FcU-SP-at8" secondAttribute="width" id="xFA-5D-FdS"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3H-nz-pnt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1202" y="107"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dust2_5_nasa_bar_new" width="952" height="69"/>
+    </resources>
+</document>

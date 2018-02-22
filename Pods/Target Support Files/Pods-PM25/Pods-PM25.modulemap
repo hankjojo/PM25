@@ -1,0 +1,6 @@
+framework module Pods_PM25 {
+  umbrella header "Pods-PM25-umbrella.h"
+
+  export *
+  module * { export * }
+}
